@@ -14,13 +14,19 @@ class ProductPage extends StatelessWidget {
       body: ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
+          String newIndex = '${index + 1}';
+
           return ListTile(
             onTap: () {
-              // context.go('/product/${index + 1}');
-              context.goNamed('pathId', pathParameters: {'id': '${index + 1}'});
+              context.goNamed('pathId', pathParameters: {
+                'id': '$newIndex'
+              }, queryParameters: {
+                'title': 'Product $newIndex',
+                'description': 'Description of Product $newIndex'
+              });
             },
-            leading: CircleAvatar(child: Text('${index + 1}')),
-            title: Text('Product ${index + 1}'),
+            leading: CircleAvatar(child: Text('$newIndex')),
+            title: Text('Product $newIndex'),
           );
         },
       ),

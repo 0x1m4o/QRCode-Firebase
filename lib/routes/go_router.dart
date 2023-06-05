@@ -25,8 +25,8 @@ final router = GoRouter(
                 GoRoute(
                   path: RouteName.productID,
                   name: 'pathId',
-                  builder: (context, state) =>
-                      DetailProduct(state.pathParameters['id'].toString()),
+                  builder: (context, state) => DetailProduct(
+                      state.pathParameters, state.queryParameters),
                 ),
               ]),
         ]),
