@@ -8,7 +8,10 @@ class ErrorPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: Text('Error, Page not found'),
+        child: Text(
+          'Error, Page not found',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }

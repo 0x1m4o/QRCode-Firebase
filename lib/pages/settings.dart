@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:qrcode/routes/pages_name.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -7,7 +9,20 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Setting Page'),
+        title: const Text('Setting Page'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+                onPressed: () {
+                  // context.go(RouteName.home);
+                  context.goNamed(RouteName.home);
+                },
+                child: Text('Go to Home Page'))
+          ],
+        ),
       ),
     );
   }
